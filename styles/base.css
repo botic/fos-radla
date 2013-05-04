@@ -51,6 +51,7 @@ button {
 }
 
 #map {
+  height: -webkit-calc(100% - 73px);
   height: calc(100% - 73px);
 }
 
@@ -66,6 +67,7 @@ button {
   position: absolute;
   top: 12px;
   left: 78px;
+  width: -webkit-calc(100% - 70px - 50px);
   width: calc(100% - 70px - 50px);
 }
 
