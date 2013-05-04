@@ -1,7 +1,7 @@
 {
     "version": "1",
     "name": "radla",
-    "launch_path": "./index.html",
+    "launch_path": "/radla/index.html",
     "description": "A simple demo to show Vienna City Bikes.",
     "icons": {
         "128": "http://hoffburg.at/radla/images/icon-128.png"
