@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'mozTT';
+    src: url('../fonts/moztt_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mozTT';
+    src: url('../fonts/moztt_light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mozTT';
+    src: url('../fonts/moztt_medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font: normal 16px "mozTT", sans-serif;
+  background: #fff;
+}
+
+body {
+  position: relative;
+  height: 100%;
+}
+
+header {
+  z-index: 200;
+  height: 72px;
+  position: relative;
+  border-bottom: 1px solid #999;
+  box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.85); 
+  background: linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#dbdbdb 51%,#fefefe 100%); /* W3C */
+}
+
+header h1 {
+  display: inline;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+}
+
+button {
+  font-family: "mozTT", sans-serif;
+}
+
+#map {
+  height: calc(100% - 73px);
+}
+
+.leaflet-popup-content h2 {
+  font-weight: bold
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+}
+
+#modus {
+  position: absolute;
+  top: 12px;
+  left: 78px;
+  width: calc(100% - 70px - 50px);
+}
+
+#modus p {
+  margin-bottom: 3px;
+}
+
+#modus label {
+  display: inline;
+}
+
+#locate {
+  position: absolute;
+  top: 25px;
+  right: 5px;
+}
+
+.leaflet-popup-content .description {
+  font-size: 10px;
+  color: #777;
+}
+
+.borrow .leaflet-popup-content .bikes,
+.return .leaflet-popup-content .boxes {
+  font-weight: bold;
+}
+
+.leaflet-popup-content .bikes {
+  margin-top: 6px;
+}
+
+.leaflet-popup-content .boxes {
+  margin-bottom: 6px;
+}

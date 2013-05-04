@@ -1,0 +1,24 @@
+{
+    "version": "1",
+    "name": "radla",
+    "launch_path": "./index.html",
+    "description": "A simple demo to show Vienna City Bikes.",
+    "icons": {
+        "16": "./images/icon-16.png",
+        "32": "./images/icon-32.png",
+        "48": "./images/icon-48.png",
+        "64": "./images/icon-64.png",
+        "128": "./images/icon-128.png"
+    },
+    "developer": {
+        "name": "Philipp Naderer",
+        "url": "http://naderer.biz"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "de",
+    "permissions": {
+        "geolocation": {
+            "description" : "Marking out user location"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# Version 0.6799999
+
+index.html
+styles/reset.css
+scripts/base.js
+
+NETWORK:
+*
+
+# FALLBACK:
+# / fallback.html
