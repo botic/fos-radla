@@ -67,7 +67,6 @@ var loadStations = function(mode) {
             }).bindPopup(boxText.join(""), {
                maxWidth: 160
             }));
-            console.log("added ", station);
          });
          markerLayer = L.layerGroup(markers);
          map.addLayer(markerLayer);
