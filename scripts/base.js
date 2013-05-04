@@ -1,4 +1,16 @@
 $(document).ready(function() {
+
+   var checkIfInstalled = navigator.mozApps.getSelf();
+   checkIfInstalled.onsuccess = function () {
+     if (checkIfInstalled.result) {
+         $("#install").remove();
+     }
+   };
+
+   if (!navigator.mozApps) {
+      $("#install").remove();
+   }
+
    var map = L.map("map").setView([48.20946, 16.371174], 13);
    var markerLayer;
 

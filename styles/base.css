@@ -88,6 +88,12 @@ button {
   right: 5px;
 }
 
+#install {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+
 .leaflet-popup-content .description {
   font-size: 10px;
   color: #777;

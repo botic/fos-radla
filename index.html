@@ -22,6 +22,7 @@
 
 </head>
 <body>
+
    <header>
       <h1><img src="./images/icon-64.png" alt="radla"></h1>
 
@@ -38,6 +39,8 @@
       </div>
 
       <button id="locate">Wo bin ich?</button>
+
+      <button id="install" onclick="navigator.mozApps.install("http://hoffburg.at/radla/manifest.webapp"); return false;">Install</button>
    </header>
    
    <div id="map"></div>
