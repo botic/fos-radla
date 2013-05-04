@@ -95,12 +95,20 @@ var loadStations = function(mode) {
       });
    });
 
-   $("#modus input[name='view']").on("change", function(event) {
-      loadStations($(this).val());
-      $("#map").toggleClass("borrow", $(this).val() > 0);
-      $("#map").toggleClass("return", $(this).val() < 0);
+   $("#ausborgen").on("click", function(event) {
+      loadStations(1);
+      $("#map").addClass("borrow").removeClass("return");
    });
 
-   $("#modus input[name='view']").trigger("change");
+   $("#abstellen").on("click", function(event) {
+      loadStations(-1);
+      $("#map").removeClass("borrow").addClass("return");
+   });
+
+   if ($("#ausborgen").prop("checked")) {
+      $("#ausborgen").trigger("click");
+   } else {
+      $("#abstellen").trigger("click");
+   }
 
 });
