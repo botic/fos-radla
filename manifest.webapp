@@ -2,7 +2,7 @@
    "version": "1",
    "name": "radla",
    "launch_path": "/radla/index.html",
-   "description": "A simple demo to show Vienna City Bikes.",
+   "description": "Find free bikes and boxes for Vienna Citybikes.",
    "icons": {
       "60":  "/radla/images/icon-60.png",
       "64":  "/radla/images/icon-64.png",
@@ -16,7 +16,7 @@
    "default_locale": "de",
    "permissions": {
       "geolocation": {
-         "description": "Needed to tell the user where they are"
+         "description": "Needed to tell the user where they are."
       }
    }
 }
