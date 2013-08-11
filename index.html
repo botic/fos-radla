@@ -38,9 +38,12 @@
          </p>
       </div>
 
-      <button id="locate">Wo bin ich?</button>
-
-      <button id="install" onclick="navigator.mozApps.install('http://hoffburg.at/radla/manifest.webapp'); return false;">Installieren</button>
+      <div id="buttons">
+         <button id="locate">Wo bin ich?</button>
+         <button id="refresh">Aktualisieren</button>
+         <button id="install" onclick="navigator.mozApps.install('http://hoffburg.at/radla/manifest.webapp'); return false;">Installieren</button>
+      </div>
+      
    </header>
    
    <div id="map"></div>

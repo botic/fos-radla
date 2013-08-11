@@ -1,20 +1,20 @@
 @font-face {
-    font-family: 'mozTT';
-    src: url('../fonts/moztt_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'mozTT';
+  src: url('../fonts/moztt_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'mozTT';
-    src: url('../fonts/moztt_light-webfont.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'mozTT';
+  src: url('../fonts/moztt_light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'mozTT';
-    src: url('../fonts/moztt_medium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'mozTT';
+  src: url('../fonts/moztt_medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }
 
 html, body {
@@ -82,16 +82,41 @@ button {
   display: inline;
 }
 
+#buttons {
+  display: none;
+}
+
+#buttons.visible {
+  display: block;
+}
+
 #locate {
   position: absolute;
   top: 25px;
   right: 5px;
+  width: 95px;
+}
+
+#buttons.installed #locate {
+  top: 12px;
+}
+
+#buttons.installed #refresh {
+  top: 38px;
+}
+
+#refresh {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  width: 95px;
 }
 
 #install {
   position: absolute;
-  top: 2px;
+  top: 48px;
   right: 5px;
+  width: 95px;
 }
 
 .leaflet-popup-content .description {

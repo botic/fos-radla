@@ -5,14 +5,19 @@ $(document).ready(function() {
       checkIfInstalled.onsuccess = function () {
         if (checkIfInstalled.result) {
             $("#install").remove();
+            $("#buttons").addClass("installed");
         }
       };
    } else {
       $("#install").remove();
+      $("#buttons").addClass("installed");
    }
+
+   $("#buttons").addClass("visible");
 
    var map = L.map("map").setView([48.20946, 16.371174], 13);
    var markerLayer;
+   var currentPositionLayer;
 
    L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Station data <a href="http://citybik.es">CityBik.es</a>',
@@ -86,13 +91,42 @@ var loadStations = function(mode) {
    };
 
    $("#locate").on("click", function(event) {
-      // Geolocation
-      navigator.geolocation.getCurrentPosition(function (position) {
-         map.setView([position.coords.latitude, position.coords.longitude], 15)
-      },
-      function (position) {
-         alert("ohhh noooo!");
-      });
+      if ("geolocation" in navigator) {
+         // Geolocation
+         navigator.geolocation.getCurrentPosition(function (position) {
+            if (currentPositionLayer) {
+               map.removeLayer(currentPositionLayer);
+            }
+            currentPositionLayer = L.layerGroup([L.circleMarker(
+               [position.coords.latitude, position.coords.longitude],
+               {
+                  radius: "8",
+                  color: "#24C8FF",
+                  fillColor: "#9EE7FF",
+                  fillOpacity: 0.8
+               }
+            )]);
+            
+            map.addLayer(currentPositionLayer);
+            map.setView([position.coords.latitude, position.coords.longitude], 15);
+         },
+         function (positionError) {
+            var message = positionError.message;
+
+            if (message === undefined) {
+               switch (positionError.code) {
+                  case 1: message = "Permission denied."; break;
+                  case 2: message = "Position unavailable."; break;
+                  case 3: message = "Request timed out."; break;
+                  default: message = "Unknown error: " + positionError.code;
+               }
+            }
+
+            alert(message);
+         });
+      } else {
+         alert("Your device does not support geolocation.");
+      }
    });
 
    $("#ausborgen").on("click", function(event) {
@@ -103,6 +137,10 @@ var loadStations = function(mode) {
    $("#abstellen").on("click", function(event) {
       loadStations(-1);
       $("#map").removeClass("borrow").addClass("return");
+   });
+
+   $("#refresh").on("click", function(event) {
+      loadStations($("#ausborgen").prop("checked") ? 1 : -1);
    });
 
    if ($("#ausborgen").prop("checked")) {
