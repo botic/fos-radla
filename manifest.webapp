@@ -4,7 +4,7 @@
    "launch_path": "index.html",
    "description": "A simple demo to show Vienna City Bikes.",
    "icons": {
-      "128": "http://hoffburg.at/radla/images/icon-128.png"
+      "128": "icon.png"
    },
    "developer": {
       "name": "Philipp Naderer",
