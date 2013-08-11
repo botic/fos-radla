@@ -4,7 +4,7 @@
    "launch_path": "index.html",
    "description": "A simple demo to show Vienna City Bikes.",
    "icons": {
-      "128": "icon.png"
+      "128": "/radla/icon.png"
    },
    "developer": {
       "name": "Philipp Naderer",
