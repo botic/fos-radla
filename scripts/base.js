@@ -24,6 +24,10 @@ $(document).ready(function() {
       maxZoom: 18
    }).addTo(map);
 
+   $(".leaflet-control-container a").each(function() {
+      $(this).attr("target", "blank");
+   });
+
    // Define markers - http://mapicons.nicolasmollet.com/category/markers/sports/cycling/
    var redIcon = L.icon({
       iconUrl: './lib/images/marker-red.png',
@@ -46,7 +50,7 @@ $(document).ready(function() {
       popupAnchor: [0, -34]
    });
 
-var loadStations = function(mode) {
+   var loadStations = function(mode) {
       if (markerLayer) {
          map.removeLayer(markerLayer);
       }
