@@ -56,7 +56,7 @@ $(document).ready(function() {
       }
 
       $.ajax({
-         url: "http://api.citybik.es/wien.json?callback=getBikes",
+         url: "http://api.citybik.es/citybike-wien.json?callback=getBikes",
          dataType: "jsonp",
          cache: false,
          jsonpCallback: "getBikes"
@@ -77,10 +77,6 @@ $(document).ready(function() {
                icon = (station.bikes > 4 ? greenIcon : (station.bikes > 0 ? yellowIcon : redIcon));
             } else {
                icon = (station.boxes > 4 ? greenIcon : (station.boxes > 0 ? yellowIcon : redIcon));
-            }
-
-            if (station.status != "aktiv") {
-               icon = redIcon;
             }
 
             markers.push(L.marker([station.lat / 1000000, station.lng / 1000000], {
@@ -110,7 +106,7 @@ $(document).ready(function() {
                   fillOpacity: 0.8
                }
             )]);
-            
+
             map.addLayer(currentPositionLayer);
             map.setView([position.coords.latitude, position.coords.longitude], 15);
          },
