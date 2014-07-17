@@ -67,16 +67,14 @@ $(document).ready(function() {
                "<h2>", station.name, "</h2>",
                (station.description ? "<p class='description'>" + station.description + "</p>" : ""),
                "<p class='bikes'>Freie Räder: ", station.bikes, "</p>",
-               "<p class='boxes'>Freie Boxen: ", station.free , "</p>",
-               "<p class='total'>Gesamt: ", station.boxes , "</p>",
-               "<p>Status: ", station.status, "</p>"
+               "<p class='boxes'>Freie Boxen: ", station.free , "</p>"
             ];
 
             var icon = greenIcon;
             if (mode > 0) {
                icon = (station.bikes > 4 ? greenIcon : (station.bikes > 0 ? yellowIcon : redIcon));
             } else {
-               icon = (station.boxes > 4 ? greenIcon : (station.boxes > 0 ? yellowIcon : redIcon));
+               icon = (station.free > 4 ? greenIcon : (station.free > 0 ? yellowIcon : redIcon));
             }
 
             markers.push(L.marker([station.lat / 1000000, station.lng / 1000000], {
